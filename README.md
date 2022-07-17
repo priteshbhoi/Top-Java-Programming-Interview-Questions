@@ -458,3 +458,293 @@ if (exp == 0)
     }
 }
 ```
+
+## 12. Program to Calculate Mean in Java.
+
+```java
+import java.util.Scanner;
+
+class CalculateMean
+{
+
+    public static void main(String[] args)
+    {
+
+        int sum = 0, inputNum;
+        int counter;
+        float mean;
+        Scanner NumScanner = new Scanner(System.in);
+
+        System.out.println("Enter the total number of terms whose mean you want to calculate");
+
+        counter = NumScanner.nextInt();
+
+        System.out.println("Please enter " + counter + " numbers:");
+
+        for (int x = 1; x <= counter; x++)
+        {
+            inputNum = NumScanner.nextInt();
+            sum = sum + inputNum;
+            System.out.println();
+        }
+
+        mean = sum / counter;
+        System.out.println("The mean of the " + counter + " numbers you entered is " + mean);
+    }
+}
+```
+
+## 13. Program to Convert Binary to Decimal in Java.
+
+```java
+import java.io.*;
+
+class BinaryToDecimal
+{
+    public static void main(String[] args) throws Exception
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter Binary no. to convert in Decimal : ");
+        String number = br.readLine();
+               
+        /*
+          to convert Binary number to decimal number use,
+          int parseInt method of Integer wrapper class.
+         
+          Pass 2 as redix second argument.
+         */
+
+        int decimalNumber = Integer.parseInt(number, 2);
+        System.out.println("Binary number converted to decimal number");
+        System.out.println("Decimal number is : " + decimalNumber);
+
+    }
+}
+```
+
+## 14. Program to Convert Binary to Octal in Java.
+
+```java
+import java.io.*;
+
+class BinaryToOctal
+{
+    public static void main(String[] args) throws Exception
+    {
+        String num = null;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.print("Enter binary number : ");
+        num = br.readLine();
+        int dec = Integer.parseInt(num, 2);
+
+        String oct = Integer.toOctalString(dec);
+
+        System.out.println("Binary " + num + " in Octal is " + oct);
+
+    }
+}
+```
+
+## 15. Program to Convert Decimal to Binary in Java.
+
+```java
+import java.util.Scanner;
+
+class DecimalToBinary
+{
+
+    public String toBinary(int n)
+    {
+        if (n == 0)
+        {
+            return "0";
+        }
+
+        String binary = "";
+        while (n > 0)
+        {
+            int rem = n % 2;
+            binary = rem + binary;
+            n = n / 2;
+        }
+
+        return binary;
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int decimal = scanner.nextInt();
+
+        DecimalToBinary decimalToBinary = new DecimalToBinary();
+        String binary = decimalToBinary.toBinary(decimal);
+
+        System.out.println("The binary representation is " + binary);
+    }
+}
+```
+
+## 16. Program to Find Fraction Addition in Java.
+
+```java
+import java.util.*;
+
+class FractionAdding
+{
+    public static void main(String args[])
+    {
+        float a, b, c, d;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a : ");
+        a = scanner.nextFloat();
+        System.out.print("Enter b : ");
+        b = scanner.nextFloat();
+        System.out.print("Enter c : ");
+        c = scanner.nextFloat();
+        System.out.print("Enter d : ");
+        d = scanner.nextFloat();
+
+        // fraction addition formula ((a*d)+(b*c))/(b*d)
+        System.out.print("Fraction Addition : [( " + a + " * " + d + " )+( " + b + " * " + c + " ) / ( " + b + " * " + d + " )] = " + (((a * d) + (b * c)) / (b * d)));
+    }
+}
+```
+## 17. Program to Find Fraction Subtraction in Java.
+
+```java
+import java.util.*;
+
+class FractionSubtraction
+{
+ public static void main(String args[])
+ {
+  float a,b,c,d;
+  Scanner scanner = new Scanner(System.in);
+  System.out.print("Enter a : ");
+  a = scanner.nextFloat();
+  System.out.print("Enter b : ");
+  b = scanner.nextFloat();
+  System.out.print("Enter c : ");
+  c = scanner.nextFloat();
+  System.out.print("Enter d : ");
+  d = scanner.nextFloat();
+
+  // fraction addition formula ((a*d)-(b*c))/(b*d)
+  System.out.print("Fraction subtraction : [( "+a+" * "+d+" )-( "+b+" * "+c+" ) / ( "+b+" * "+d+" )] = "+(((a*d)-(b*c))/(b*d)));
+ }
+}
+```
+
+## 18. Program to Find GCDLCM in Java.
+
+```java
+import java.util.Scanner;
+
+class GCDLCM
+{
+    public static void main(String args[])
+    {
+        int x, y;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the two numbers: ");
+        x = sc.nextInt();
+        y = sc.nextInt();
+
+        System.out.println("GCD of two numbers is : " + gcd(x, y));
+        System.out.println("LCM of two numbers is : " + lcm(x, y));
+    }
+
+    static int gcd(int x, int y)
+    {
+        int r = 0, a, b;
+        a = (x > y) ? x : y; // a is greater number
+        b = (x < y) ? x : y; // b is smaller number
+
+        r = b;
+        while (a % b != 0)
+        {
+            r = a % b;
+            a = b;
+            b = r;
+        }
+        return r;
+    }
+
+    static int lcm(int x, int y)
+    {
+        int a;
+        a = (x > y) ? x : y; // a is greater number
+        while (true)
+        {
+            if (a % x == 0 && a % y == 0)
+            {
+                return a;
+            }
+            ++a;
+        }
+    }
+}
+```
+
+## 19. Program to Find Harmonic Series in Java.
+
+```java
+import java.util.*;
+
+class HarmonicSeries
+{
+
+    public static void main(String args[])
+    {
+
+        int num, i = 1;
+        double rst = 0.0;
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the number for length of series");
+        num = in.nextInt();
+
+        while (i <= num)
+        {
+
+            System.out.print("1/" + i + " +");
+            rst = rst + (double) 1 / i;
+
+            i++;
+        }
+
+        System.out.println("\n\nSum of Harmonic Series is " + rst);
+    }
+}
+```
+
+## 20. Program to Create Multiplication Table in Java.
+
+```java
+import java.util.Scanner;
+
+class MultiplicationTable
+{
+
+    public static void main(String args[])
+    {
+
+        int n, c;
+        System.out
+                .println("Enter an integer to print it's multiplication table");
+
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        System.out.println("Multiplication table of " + n + " is :-");
+
+        for (c = 1; c <= 10; c++)
+        {
+            System.out.println(n + "*" + c + " = " + (n * c));
+        }
+
+    }
+}
+```
