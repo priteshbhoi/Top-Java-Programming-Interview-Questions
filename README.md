@@ -277,3 +277,52 @@ class CalculateInterest
     }
 }
 ```
+
+## 9. Program to Calculate Binary Number Calculation in Java.
+
+```java
+import java.util.*;
+
+class BinaryCalculator
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("First Binary:  ");
+        String binOne = in.next();
+
+        System.out.print("Second Binary: ");
+        String binTwo = in.next();
+
+        int left = Integer.parseInt(binOne, 2);
+        int right = Integer.parseInt(binTwo, 2);
+
+        System.out.println("Sum of the binary numbers : " + Integer.toBinaryString(left + right));
+        System.out.println("Difference of the binary numbers : " + Integer.toBinaryString(left - right));
+        System.out.println("Product of the binary numbers : " + Integer.toBinaryString(left * right));
+        System.out.println("Quotient of the binary numbers : " + Integer.toBinaryString(left / right));
+    }
+}
+```
+
+## 10. Program to Convert Celsius to Fahrenheit in Java.
+
+```java
+import java.util.*;
+
+class CelsiustoFahrenheit
+{
+    public static void main(String[] args)
+    {
+        double temperature;
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter temperature in Celsius");
+        temperature = in.nextInt();
+
+        temperature = (temperature * 9 / 5.0) + 32;
+        System.out.println("Temperature in Fahrenheit = " + temperature);
+    }
+}
+```
