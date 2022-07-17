@@ -1,7 +1,9 @@
 # Top-Java-Programming-Interview-Questions
+
 Java Programming Interview Questions are always the deciding factor in any Java interview. Whether you are a beginner in Java or an expert programmer, you will be tested for your coding skills in the interview. So, it’s a good idea to brush up your coding skills before you face the interview.
 
 ## 1. Program to Print Hello World in Java.
+
 ```java
 class HelloWorld
 {
@@ -9,10 +11,11 @@ class HelloWorld
     {
         System.out.println("Hello World!!");
     }
-} 
+}
 ```
 
 ## 2. Program to Accept values of Two Numbers and print their Addition in Java.
+
 ```java
 import java.util.Scanner;
 
@@ -31,17 +34,16 @@ class AddNumbers
 }
 ```
 
-
-
 ## 3. Program to accept three Number and Print Largest among them in Java.
+
 ```Java
-class CommandLineArgs 
+class CommandLineArgs
 
 {
-    public static void main(String args[]) 
+    public static void main(String args[])
     {
         int a, b, c;
-        
+
         a = Integer.parseInt(args[0]);
         b = Integer.parseInt(args[1]);
         c = Integer.parseInt(args[2]);
@@ -108,6 +110,7 @@ class AreaOfRectangle
 ```
 
 ## 6. Program to Accept value of the side of Square and Calculate Area of Square in Java.
+
 ```java
 import java.util.*;
 
@@ -130,6 +133,7 @@ class AreaOfSquare
 ```
 
 ## 7. Program to Calculate Area's in Java.
+
 ```java
 import java.util.Scanner;
 
@@ -506,11 +510,11 @@ class BinaryToDecimal
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter Binary no. to convert in Decimal : ");
         String number = br.readLine();
-               
+
         /*
           to convert Binary number to decimal number use,
           int parseInt method of Integer wrapper class.
-         
+
           Pass 2 as redix second argument.
          */
 
@@ -611,6 +615,7 @@ class FractionAdding
     }
 }
 ```
+
 ## 17. Program to Find Fraction Subtraction in Java.
 
 ```java
@@ -745,6 +750,77 @@ class MultiplicationTable
             System.out.println(n + "*" + c + " = " + (n * c));
         }
 
+    }
+}
+```
+
+## 21. Alphabet Pattern in Java.
+
+<pre>
+A 
+BB 
+CCC
+DDDD
+EEEEE
+</pre>
+
+```java
+import java.util.*;
+
+class AlphabetPattern
+{
+    public static void main(String[] arg)
+    {
+        int line, row, col;
+        char ch = 'A';
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number of lines : ");
+        line = scanner.nextInt();
+
+        for (row = 1; row <= line; row++)
+        {
+            for (col = 1; col <= row; col++)
+            {
+                System.out.print("" + ch);
+            }
+            System.out.println();
+            ch++;
+        }
+    }
+}
+```
+
+## 22. Binary pattern in Java.
+
+<pre>
+1
+01
+101
+0101
+10101 
+</pre>
+
+```java
+       class BinaryPattern
+{
+    public static void main(String s[])
+    {
+        int i, j;
+ int count = 1;
+        for (i = 1; i <= 5; i++)
+        {
+            for (j = 1; j <= i; j++)
+            {
+                System.out.format("%d", count++ % 2);
+                if (j == i && i != 5)
+                    System.out.println("");
+            }
+
+            if (i % 2 == 0)
+                count = 1;
+            else
+                count = 0;
+        }
     }
 }
 ```
