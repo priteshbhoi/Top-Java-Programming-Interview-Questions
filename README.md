@@ -1202,7 +1202,7 @@ class NumberPat5
 }
 ```
 
-## 31. Number pattern 6.
+## 31. Number pattern 6 in Java.
 <pre>
 1 
 22 
@@ -1223,6 +1223,382 @@ class NumberPat6
             for(int j=1;j<=i;j++)
             {
                 System.out.print(i);
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+
+## 32. Number pattern 7 in Java.
+<pre>
+1
+23
+456
+7890
+12345
+</pre>
+
+```java
+class NumberPat7
+{
+
+    public static void main(String arg[])
+    {
+
+        int t = 1;
+        for (int i = 1; i <= 5; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                if (t == 10)
+                    t = 0;
+                System.out.print(t++);
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+## 33. Number pattern 8 in Java.
+
+<pre>
+5
+11111 
+0000 
+111 
+00 
+1
+</pre>
+
+```java
+import java.util.Scanner;
+
+class Pattern
+{
+    public static void main(String args[])
+    {
+        int n, i, j;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the number of rows ");
+        n = sc.nextInt();
+
+        for (i = 1; i <= n; i++)
+        {
+            for (j = i; j <= n; j++)
+            {
+                if (i % 2 == 0)
+                    System.out.print("0");
+                else
+                    System.out.print("1");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+## 34. Number pattern 9 in Java.
+<pre>
+        1 
+      1 2 1 
+    1 2 3 2 1 
+  1 2 3 4 3 2 1 
+1 2 3 4 5 4 3 2 1
+</pre>
+
+```java
+class PrintPattern
+{
+    public static void main(String args[])
+    {
+        int n = 5;
+        for (int i = 1; i <= n; i++)
+        {
+            int j = n - i;
+            while (j > 0)
+            {
+                System.out.print("  ");
+                j--;
+            }
+
+            j = 1;
+            while (j <= i)
+            {
+                System.out.print(" " + j);
+                j++;
+            }
+
+            j = i - 1;
+            while (j > 0)
+            {
+                System.out.print(" " + j);
+                j--;
+            }
+
+            j = n - i;
+            while (j > 0)
+            {
+                System.out.print("  ");
+                j--;
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+## 35. Number pattern 10 in Java.
+<pre>
+1 
+121 
+12321 
+1234321 
+123454321 
+12345654321 
+1234567654321
+</pre>
+
+```java
+import java.util.*;
+
+class Pattern
+{
+    public static void main(String[] args)
+    {
+        int i, j, k = 1, l, n;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the number of levels of pattern");
+        n = sc.nextInt();
+
+        System.out.println("\nPattern is : \n");
+
+        for (i = 1; i <= n; i++)
+        {
+            l = i;
+
+            for (j = 1; j <= k; j++)
+            {
+                if (j >= i + 1)
+                {
+                    System.out.print(--l);
+                }
+
+                else
+                {
+                    System.out.print(j);
+                }
+            }
+
+            k = k + 2;
+            System.out.println(" ");
+        }
+    }
+}
+```
+
+## 36. Star Pattern 1 in Java.
+<pre>
+****
+*** 
+**
+*
+</pre>
+
+```java
+class StarPattern1
+{
+
+    public static void main(String arg[])
+    {
+
+        for (int i = 1; i <= 5; i++)
+        {
+
+            for (int j = i; j <= 5; j++)
+
+            {
+
+                System.out.print("*");
+
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+## 37. Star Pattern 2 in Java.
+
+<pre>
+* 
+**
+***
+****
+*****
+</pre>
+
+```java
+class StarPattern2
+{
+
+    public static void main(String arg[])
+    {
+
+        for (int i = 1; i <= 5; i++)
+        {
+            for (int j = 1; j <= i; j++)
+
+            {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+## 38. Star Pattern 3 in Java.
+<pre>
+*****
+****
+***
+**
+*
+*
+**
+***
+****
+*****
+</pre>
+```java
+class StarPattern3
+{
+
+    public static void main(String arg[])
+    {
+
+        for (int i = 1; i <= 5; i++)
+        {
+            for (int j = i; j <= 5; j++)
+
+            {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+
+        for (int i = 1; i <= 5; i++)
+        {
+            for (int j = 1; j <= i; j++)
+
+            {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+
+    }
+}
+```
+## 39. Star Pattern 4 in Java.
+<pre>
+**
+****
+******
+********
+**********
+</pre>
+```java
+class StarPattern4
+{
+
+    public static void main(String arg[])
+    {
+
+        int num = 12;
+        int f = 2;
+        int g = num - 1;
+
+        for (int i = 1; i <= (num / 2); i++)
+        {
+
+            for (int j = 1; j <= num; j++)
+            {
+
+                if (j >= f && j <= g)
+                {
+
+                    System.out.print(" ");
+
+                }
+                else
+                {
+
+                    System.out.print("*");
+
+                }
+            }
+
+            f = f + 1;
+            g = g - 1;
+
+            System.out.println();
+        }
+    } 
+}
+```
+
+## 40. Star Pattern 5 in Java.
+
+<pre>
+*
+**
+***
+****
+*****
+*****
+****
+***
+**
+*
+</pre>
+
+```java
+class StarPattern5
+{
+
+    public static void main(String arg[])
+    {
+
+        for (int i = 1; i <= 5; i++)
+        {
+
+            for (int j = 1; j <= i; j++)
+
+            {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+
+        for (int i = 1; i <= 5; i++)
+        {
+
+            for (int j = i; j <= 5; j++)
+
+            {
+                System.out.print("*");
             }
 
             System.out.println();
