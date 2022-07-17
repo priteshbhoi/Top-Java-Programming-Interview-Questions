@@ -824,3 +824,409 @@ class AlphabetPattern
     }
 }
 ```
+
+## 23. Christmas tree in Java.
+
+```java
+class ChristmasTree
+{
+    public static final int segments = 4;
+    public static final int height = 4;
+
+    public static void main(String[] args)
+    {
+        makeTree();
+    }
+
+    public static void makeTree()
+    {
+        int maxStars = 2 * height + 2 * segments - 3;
+        String maxStr = "";
+        for (int l = 0; l < maxStars; l++)
+        {
+            maxStr += " ";
+        }
+
+        for (int i = 1; i <= segments; i++)
+        {
+            for (int line = 1; line <= height; line++)
+            {
+                String starStr = "";
+                for (int j = 1; j <= 2 * line + 2 * i - 3; j++)
+                {
+                    starStr += "*";
+                }
+
+                for (int space = 0; space <= maxStars - (height + line + i); space++)
+                {
+                    starStr = " " + starStr;
+                }
+                System.out.println(starStr);
+            }
+        }
+
+        for (int i = 0; i <= maxStars / 2; i++)
+        {
+            System.out.print(" ");
+        }
+
+        System.out.println(" " + "*" + " ");
+
+        for (int i = 0; i <= maxStars / 2; i++)
+        {
+            System.out.print(" ");
+        }
+
+        System.out.println(" " + "*" + " ");
+
+        for (int i = 0; i <= maxStars / 2 - 3; i++)
+        {
+            System.out.print(" ");
+        }
+
+        System.out.println(" " + "*******");
+    }
+}
+```
+
+## 24. Christmas tree pattern in Java.
+
+  <pre>
+      X
+      X
+     XXX
+      X
+    XXXXX
+      X
+     XXX
+   XXXXXX 
+</pre>
+
+```java
+class ChristmasTreePattern
+{
+    public static void main(String[] arg)
+    {
+        drawChristmasTree(4);
+    }
+
+    private static void drawChristmasTree(int n)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            triangle(i + 1, n);
+        }
+    }
+
+    private static void triangle(int n, int max)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < max - i - 1; j++)
+            {
+                System.out.print(" ");
+            }
+
+            for (int j = 0; j < i * 2 + 1; j++)
+            {
+                System.out.print("X");
+            }
+
+            System.out.println("");
+        }
+    }
+}
+```
+## 25. Floyd Triangle in Java.
+<pre>
+1
+2 3 
+4 5 6 
+7 8 9 10
+11 12 13 14 15 
+</pre>
+
+```java
+import java.util.Scanner;
+
+class FloydTriangle
+{
+    public static void main(String args[])
+    {
+        int n, num = 1, c, d;
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows of floyd's triangle : ");
+        n = in.nextInt();
+
+        System.out.println("Floyd's triangle :-");
+
+        for (c = 1; c <= n; c++)
+        {
+            for (d = 1; d <= c; d++)
+            {
+                System.out.print(num + " ");
+                num++;
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+## 26. Number pattern 1 in Java.
+<pre>
+1
+12
+123
+1234
+12345
+</pre>
+
+```java
+class NumberPat1
+{
+
+    public static void main(String arg[])
+    {
+
+        for (int i = 1; i <= 5; i++)
+        {
+
+            for (int j = 1; j <= i; j++)
+            {
+
+                System.out.print(j);
+
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+## 27. Number pattern 2 in Java.
+
+```java
+class NumberPat2
+{
+
+    public static void main(String arg[])
+    {
+
+        for (int i = 1; i <= 5; i++)
+        {
+
+            for (int j = 5; j >= i; j--)
+            {
+
+                System.out.print(j);
+
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+## 28. Number pattern 3 in Java.
+<pre>
+12345
+1234
+123
+12
+1
+</pre>
+
+```java
+class NumberPat3
+{
+
+    public static void main(String arg[])
+    {
+
+        for (int i = 1, r = 5; i <= 5; i++, r--)
+        {
+
+            for (int j = 1; j <= r; j++)
+            {
+
+                System.out.print(j);
+
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+## 29. Number pattern 4 in Java.
+<pre>
+1
+12
+123
+1234
+12345
+1234
+123
+12
+1
+</pre>
+
+```java
+class NumberPat4
+{
+
+    public static void main(String arg[])
+    {
+
+        int ck = 0, c = 2;
+
+        while (c > 0)
+        {
+
+            if (ck == 0)
+            {
+
+                for (int i = 1; i <= 5; i++)
+                {
+
+                    for (int j = 1; j <= i; j++) 
+                    {
+
+                        System.out.print(j);
+
+                    }
+
+                    System.out.println();
+
+                }
+
+                ck++;
+
+            }
+            else
+            {
+
+                for (int i = 1, r = 5 - 1; i <= 5 - 1; i++, r--)
+                {
+
+                    for (int j = 1; j <= r; j++)
+                    {
+
+                        System.out.print(j);
+
+                    }
+
+                    System.out.println();
+                }
+            }
+
+            c--;
+        }
+
+    }
+}
+```
+
+## 30. Number pattern 5 in Java.
+<pre>
+12345
+1234
+123
+12
+1
+12
+123
+1234
+12345
+</pre>
+
+```java
+class NumberPat5
+{
+
+    public static void main(String arg[])
+    {
+
+        int ck = 0, c = 2;
+
+        while (c > 0)
+        {
+
+            if (ck == 0)
+            {
+
+                for (int i = 1, r = 5; i <= 5; i++, r--)
+                {
+
+                    for (int j = 1; j <= r; j++)
+                    {
+
+                        System.out.print(j);
+
+                    }
+
+                    System.out.println();
+
+                }
+
+                ck++;
+
+            }
+            else
+            {
+
+                for (int i = 2; i <= 5; i++)
+                {
+
+                    for (int j = 1; j <= i; j++)
+                    {
+
+                        System.out.print(j);
+
+                    }
+
+                    System.out.println();
+                }
+            }
+
+            c--;
+        }
+
+    }
+}
+```
+
+## 31. Number pattern 6.
+<pre>
+1 
+22 
+333 
+4444 
+55555
+</pre>
+
+```java
+class NumberPat6
+{
+
+    public static void main(String arg[])
+    {
+
+        for(int i=1;i<=5;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                System.out.print(i);
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
