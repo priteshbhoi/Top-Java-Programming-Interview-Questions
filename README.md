@@ -1606,3 +1606,1262 @@ class StarPattern5
     }
 }
 ```
+
+## 41. Triangle Pattern in Java.
+
+```java
+import java.io.*;
+
+class Triangle
+{
+    public static void main(String arg[])
+    {
+        InputStreamReader istream = new InputStreamReader(System.in);
+        BufferedReader read = new BufferedReader(istream);
+        System.out.println("Enter Triangle Size : ");
+        int num = 0;
+        try
+        {
+            num = Integer.parseInt(read.readLine());
+        }
+        catch (Exception Number)
+        {
+            System.out.println("Invalid Number!");
+        }
+
+        for (int i = 1; i <= num; i++)
+        {
+            for (int j = 1; j < num - (i - 1); j++)
+            {
+                System.out.print(" ");
+            }
+
+            for (int k = 1; k <= i; k++)
+            {
+                System.out.print("*");
+                for (int k1 = 1; k1 < k; k1 += k)
+                {
+
+                    System.out.print("*");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+## 42. Add two Matrix in Java.
+
+```java
+import java.util.*;
+
+class AddTwoMatrix
+{
+    int m, n;
+    int first[][] = new int[m][n];
+    int second[][] = new int[m][n];
+
+    AddTwoMatrix(int[][] first, int[][] second, int m, int n)
+    {
+        this.first = first;
+        this.second = second;
+        this.m = m;
+        this.n = n;
+    }
+
+    public static void main(String[] args)
+    {
+        int m, n, c, d;
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter the number of rows and columns of matrix");
+        m = in.nextInt();
+        n = in.nextInt();
+
+        int first[][] = new int[m][n];
+        int second[][] = new int[m][n];
+
+        System.out.println("Enter the elements of first matrix");
+
+        for (c = 0; c < m; c++)
+        {
+            for (d = 0; d < n; d++)
+            {
+                first[c][d] = in.nextInt();
+            }
+        }
+
+        System.out.println("Enter the elements of second matrix");
+
+        for (c = 0; c < m; c++)
+        {
+            for (d = 0; d < n; d++)
+            {
+                second[c][d] = in.nextInt();
+            }
+        }
+
+        System.out.println("\nElements of First matrix is : ");
+
+        for (c = 0; c < m; c++)
+        {
+            for (d = 0; d < n; d++)
+            {
+                System.out.print(first[c][d] + "\t");
+            }
+            System.out.println();
+        }
+
+        System.out.println("\nElements of Second matrix is : ");
+
+        for (c = 0; c < m; c++)
+        {
+            for (d = 0; d < n; d++)
+            {
+                System.out.print(second[c][d] + "\t");
+            }
+            System.out.println();
+        }
+
+        AddTwoMatrix a = new AddTwoMatrix(first, second, m, n);
+        //call by reference
+        a.addmatrix(a); //Passing Object
+    }
+
+    //Function for Adding two matrix and storing in third matrix 
+    public void addmatrix(AddTwoMatrix a)
+    {
+        int c, d;
+        int sum[][] = new int[a.m][a.n];
+
+        for (c = 0; c < a.m; c++)
+        {
+            for (d = 0; d < a.n; d++)
+            {
+                sum[c][d] = a.first[c][d] + a.second[c][d];
+            }
+        }
+
+        System.out.println("\nSum of the two matrices is : ");
+
+        for (c = 0; c < a.m; c++)
+        {
+            for (d = 0; d < a.n; d++)
+            {
+                System.out.print(sum[c][d] + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+## 43. Array of Arrays.
+
+```java
+class ArrayOfArraysAnimalDemo
+{
+    public static void main(String[] args)
+    {
+        String[][] animals = {{"DanaDog", "WallyDog", "JessieDog", "AlexisDog", "LuckyDog"}, {"BibsCat", "DoodleCat", "MillieCat", "SimonCat"}, {"ElyFish", "CloieFish", "GoldieFish", "OscarFish", "ZippyFish", "TedFish"}, {"RascalMule", "GeorgeMule", "GracieMule", "MontyMule", "BuckMule", "RosieMule"}};
+
+        for (int i = 0; i < animals.length; i++)
+        {
+            System.out.print(animals[i][0] + ": ");
+
+            for (int j = 1; j < animals[i].length; j++)
+            {
+                System.out.print(animals[i][j] + " ");
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+## 44. Array operations.
+```java
+class ArrayOperations
+{
+    public static void main(String[] args)
+    {
+        double[] myList = {1.9, 2.9, 3.4, 3.5};
+
+        // Print all the array elements
+        for (int i = 0; i < myList.length; i++)
+        {
+            System.out.println(myList[i] + " ");
+        }
+        // Summing all elements
+        double total = 0;
+        for (int i = 0; i < myList.length; i++)
+        {
+            total += myList[i];
+        }
+
+        System.out.println("Total is " + total);
+
+        // Finding the largest element
+        double max = myList[0];
+        for (int i = 1; i < myList.length; i++)
+        {
+            if (myList[i] > max)
+                max = myList[i];
+        }
+
+        System.out.println("Max is " + max);
+    }
+}
+```
+
+## 45. Array Sort.
+```java
+import java.util.Arrays;
+
+class ArraySort
+{
+    // This program is the example of  array sorting
+    public static void main(String[] args)
+    {
+        // TODO Auto-generated method stub
+        // initializing unsorted  array
+        String iArr[] = {"Programming", "Hub", "Alice", "Wonder", "Land"};
+
+        // sorting array
+        Arrays.sort(iArr);
+
+        // let us print all the elements available in list
+        System.out.println("The sorted array is:");
+        for (int i = 0; i < iArr.length; i++)
+        {
+            System.out.println(iArr[i]);
+        }
+    }
+}
+```
+## 46. Array Sum and Average.
+```java
+import java.io.*;
+
+class ArrayAverage
+{
+    public static void main(String[] args)
+    {
+        //define an array
+        int[] numbers = new int[]{10, 20, 15, 25, 16, 60, 100};
+
+        int sum = 0;
+
+        for (int i = 0; i < numbers.length; i++)
+        {
+            sum = sum + numbers[i];
+        }
+
+        double average = sum / numbers.length;
+        System.out.println("Sum of array elements is : " + sum);
+        System.out.println("Average value of array elements is : " + average);
+    }
+}
+```
+
+## 47. Basic Array.
+```java
+import java.util.*;
+
+class ArrayBasic
+{
+    public static void main(String[] args)
+    {
+        int[] arr;
+        int size, i;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter size of array");
+        size = sc.nextInt();
+
+        arr = new int[size];
+
+        System.out.println("\nEnter array elements");
+        for (i = 0; i < size; i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println("\nElements in the Array are : ");
+        for (i = 0; i < size; i++)
+        {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+```
+
+## 48. Create & Display Matrix.
+```java
+import java.util.Scanner;
+ 
+ class Matrix_Create {
+ 
+ Scanner scan;
+ int matrix[][];
+ int row, column;
+ 
+ void create() {
+  
+  scan = new Scanner(System.in);
+  
+  System.out.println("Matrix Creation");
+  
+  System.out.println("\nEnter number of rows :");
+  row = Integer.parseInt(scan.nextLine());
+  
+  System.out.println("Enter number of columns :");
+  column = Integer.parseInt(scan.nextLine());
+  
+  matrix = new int[row][column];
+  System.out.println("Enter the data :");
+ 
+  for(int i=0; i<row ; i++) {
+   
+   for(int j=0; j
+    <column ; j++) {
+    
+    matrix[i][j] =scan.nextInt();
+     }
+  }
+ }
+ 
+ void display() {
+  
+  System.out.println("\nThe Matrix is :");
+  
+  for(int i=0; i <row ; i++) {
+   
+   for(int j=0; j <column ; j++) {
+    
+    System.out.print("\t" + matrix[i][j]);
+   }
+   System.out.println();
+  }
+ }
+}
+ 
+  class CreateAndDisplayMatrix {
+ 
+ public static void main(String
+     args[]) {
+  
+  Matrix_Create obj=new Matrix_Create();
+  
+  obj.create();
+  obj.display();
+ }
+}
+```
+
+## 49. Display Array using for-each loop.
+```java
+class DisplayArrayForEach
+{
+    public static void main(String[] args)
+    {
+        double[] myList = {1.9, 2.9, 3.4, 3.5};
+
+        // Print all the array elements
+        for (double element : myList)
+        {
+            System.out.println(element);
+        }
+    }
+}
+```
+
+## 50. Double Matrix.
+```java
+import java.util.*;
+import java.text.DecimalFormat;
+
+class DoubleMatrix
+{
+    public static void main(String[] args)
+    {
+        double[][] a;
+        double[] s;
+        int row, col, k = 0, i, j;
+        double sum = 0.0;
+
+        DecimalFormat f = new DecimalFormat("##.####");
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter size of row and column");
+        row = sc.nextInt();
+        col = sc.nextInt();
+
+        a = new double[row][col];
+        s = new double[col];
+
+        System.out.println("Enter elements of matrix");
+        for (i = 0; i < row; i++)
+        {
+            for (j = 0; j < col; j++)
+            {
+                a[i][j] = sc.nextDouble();
+            }
+        }
+
+        System.out.println("Double Matrix is : ");
+        for (i = 0; i < row; i++)
+        {
+            for (j = 0; j < col; j++)
+            {
+                System.out.print(" " + a[i][j]);
+            }
+            System.out.println();
+        }
+
+        //sum of the elements of double matrix
+
+        for (i = 0; i < col; i++)
+        {
+            for (j = 0; j < row; j++)
+            {
+                sum = sum + a[j][i];
+            }
+            s[k] = sum;
+            k++;
+            sum = 0;
+        }
+
+        for (i = 0; i < col; i++)
+        {
+            System.out.println("Sum of Column " + (i + 1) + " is : " + f.format(s[i]));
+        }
+    }
+}
+```
+
+## 51. Example to Pass Arrays to function.
+```java
+import java.util.*;
+class PassingArraystoFunction 
+{
+    public static void main(String[] args) 
+    {
+        int[] a;
+        int size;
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter size of array");
+        size = sc.nextInt();
+        
+        a = new int[size];
+        
+        System.out.println("Enter elements in the array");
+        for(int i = 0 ;i < size; i++)
+        {
+            a[i] = sc.nextInt();
+        }
+
+        System.out.println("The Elements of the array are : ");
+        for(int i = 0 ;i < size; i++)
+        {
+            System.out.print(a[i] + " ");
+        }
+
+        //Passing array to the function
+        addElements(a, size);
+    }
+    
+    public static void addElements(int[] a , int size)
+    {
+        int sum = 0;
+        
+        for(int i = 0; i < size; i++)
+        {
+            sum += a[i];
+        }
+
+        System.out.println("\nSum of the elements of arrays is : "+sum);
+    }
+}
+```
+
+## 52. Find closest value of a number in an Array.
+```java
+import java.util.*;
+
+class ClosestValue
+{
+    public static void main(String[] args)
+    {
+        int a[];
+        int find;
+        int closest = 0;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter size of array");
+        int size = sc.nextInt();
+
+        a = new int[size];
+
+        System.out.println("Enter numbers in array");
+        for (int i = 0; i < size; i++)
+        {
+            a[i] = sc.nextInt();
+        }
+
+        System.out.println("Numbers are : ");
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print(a[i] + " ");
+        }
+
+        System.out.println();
+        System.out.println("Enter Number to find closest value");
+        find = sc.nextInt();
+
+        int distance = Math.abs(closest - find);
+
+        for (int i : a)
+        {
+            int distanceI = Math.abs(i - find);
+            if (distance > distanceI)
+            {
+                closest = i;
+                distance = distanceI;
+            }
+        }
+
+        System.out.println("Closest Value is : " + closest);
+    }
+
+}
+```
+
+## 53. Magic Matrix.
+```java
+import java.io.*;
+
+class MagicMatrix
+{
+    public static void main(String args[]) throws IOException
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter the size of the matrix : ");
+        int n = Integer.parseInt(br.readLine());
+
+        if (n > 5)
+            System.out.println("Enter a number between 1 to 5 ");
+        else
+        {
+            int A[][] = new int[n][n]; // Creating the Magic Matrix
+            int i, j, k, t;
+         
+            /*Initializing every cell of the matrix with 0 */
+            for (i = 0; i < n; i++)
+            {
+                for (j = 0; j < n; j++)
+                {
+                    A[i][j] = 0;
+                }
+            }
+
+            /* When the size of the matrix is Odd */
+            if (n % 2 != 0)
+            {
+                i = 0;
+                j = n / 2;
+                k = 1;
+                while (k <= n * n)
+                {
+                    A[i][j] = k++;
+                    i--; // Making one step upward
+                    j++; // Moving one step to the right
+
+                    if (i < 0 && j > n - 1) // Condition for the top-right corner element
+                    {
+                        i = i + 2;
+                        j--;
+                    }
+
+                    if (i < 0) // Wrapping around the row if it goes out of boundary
+                        i = n - 1;
+
+                    if (j > n - 1) // Wrapping around the column if it goes out of boundary
+                        j = 0;
+
+                    if (A[i][j] > 0) // Condition when the cell is already filled
+                    {
+                        i = i + 2;
+                        j--;
+                    }
+                }
+            }
+            /* When the size of the matrix is even */
+            else
+            {
+                k = 1;
+             
+                /* Filling the matrix with natural numbers from 1 till n*n */
+                for (i = 0; i < n; i++)
+                {
+                    for (j = 0; j < n; j++)
+                    {
+                        A[i][j] = k++;
+                    }
+                }
+
+                j = n - 1;
+
+                for (i = 0; i < n / 2; i++)
+                {
+                    /* swapping corner elements of primary diagonal */
+                    t = A[i][i];
+                    A[i][i] = A[j][j];
+                    A[j][j] = t;
+                 
+                    /* swapping corner elements of secondary diagonal */
+                    t = A[i][j];
+                    A[i][j] = A[j][i];
+                    A[j][i] = t;
+
+                    j--;
+                }
+            }
+
+            /* Printing the Magic matrix */
+            System.out.println("The Magic Matrix of size " + n + "x" + n + " is:");
+            for (i = 0; i < n; i++)
+            {
+                for (j = 0; j < n; j++)
+                {
+                    System.out.print(A[i][j] + "\t");
+                }
+                System.out.println();
+            }
+        }
+    }
+}
+```
+
+## 54. Matrix Addition.
+```java
+import java.util.Scanner; 
+  
+ class MatrixAddition { 
+  
+ Scanner scan; 
+ int matrix1[][], matrix2[][], sum[][]; 
+ int row, column; 
+  
+ void create() { 
+   
+  scan = new Scanner(System.in); 
+   
+  System.out.println("Matrix Addition"); 
+   
+  // First Matrix Creation.. 
+  System.out.println("\nEnter number of rows & columns"); 
+  row = Integer.parseInt(scan.nextLine()); 
+  column = Integer.parseInt(scan.nextLine()); 
+   
+  matrix1 = new int[row][column]; 
+  matrix2 = new int[row][column]; 
+  sum = new int[row][column]; 
+  
+  System.out.println("Enter the data for first matrix :"); 
+  
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    matrix1[i][j] = scan.nextInt(); 
+   } 
+  } 
+   
+  // Second Matrix Creation.. 
+  System.out.println("Enter the data for second matrix :"); 
+  
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    matrix2[i][j] = scan.nextInt(); 
+   } 
+  } 
+ } 
+  
+ void display() { 
+   
+  System.out.println("\nThe First Matrix is :"); 
+   
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    System.out.print("\t" + matrix1[i][j]); 
+   } 
+   System.out.println(); 
+  } 
+   
+  System.out.println("\n\nThe Second Matrix is :"); 
+   
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    System.out.print("\t" + matrix2[i][j]); 
+   } 
+   System.out.println(); 
+  } 
+ } 
+  
+ void add() { 
+   
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    sum[i][j] = matrix1[i][j] + matrix2[i][j]; 
+   } 
+  } 
+   
+  System.out.println("\n\nThe Sum is :"); 
+   
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    System.out.print("\t" + sum[i][j]); 
+   } 
+   System.out.println(); 
+  } 
+ } 
+} 
+  
+class MatrixAdditionExample { 
+  
+ public static void main(String args[]) { 
+   
+  MatrixAddition obj = new MatrixAddition(); 
+   
+  obj.create(); 
+  obj.display(); 
+  obj.add(); 
+ } 
+}
+```
+
+## 55. Matrix Multiplication. 
+```java
+import java.util.Scanner;
+
+class MatrixMultiplication
+{
+    public static void main(String args[])
+    {
+        int m, n, p, q, sum = 0, c, d, k;
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the number of rows and columns of first matrix");
+        m = in.nextInt();
+        n = in.nextInt();
+
+        int first[][] = new int[m][n];
+
+        System.out.println("Enter the elements of first matrix");
+
+        for (c = 0; c < m; c++)
+        {
+            for (d = 0; d < n; d++)
+            {
+                first[c][d] = in.nextInt();
+            }
+        }
+
+        System.out.println("Enter the number of rows and columns of second matrix");
+        p = in.nextInt();
+        q = in.nextInt();
+
+        if (n != p)
+            System.out.println("Matrices with entered orders can't be multiplied with each other.");
+        else
+        {
+            int second[][] = new int[p][q];
+            int multiply[][] = new int[m][q];
+
+            System.out.println("Enter the elements of second matrix");
+
+            for (c = 0; c < p; c++)
+            {
+                for (d = 0; d < q; d++)
+                {
+                    second[c][d] = in.nextInt();
+                }
+            }
+
+            for (c = 0; c < m; c++)
+            {
+                for (d = 0; d < q; d++)
+                {
+                    for (k = 0; k < p; k++)
+                    {
+                        sum = sum + first[c][k] * second[k][d];
+                    }
+
+                    multiply[c][d] = sum;
+                    sum = 0;
+                }
+            }
+
+            System.out.println("Product of entered matrices:-");
+
+            for (c = 0; c < m; c++)
+            {
+                for (d = 0; d < q; d++)
+                {
+                    System.out.print(multiply[c][d] + "\t");
+                }
+
+                System.out.print("\n");
+            }
+        }
+    }
+}
+
+```
+
+## 56. Matrix Operations. 
+```java
+import java.util.Scanner; 
+ 
+public class Matrices { 
+ 
+   public static void main(String[] args) { 
+     
+       Scanner scanner = new Scanner(System.in); 
+        
+       System.out.print("Enter number of rows: "); 
+       int rows = scanner.nextInt(); 
+        
+       System.out.print("Enter number of columns: "); 
+       int columns = scanner.nextInt(); 
+        
+       System.out.println(); 
+       System.out.println("Enter first matrix"); 
+       int[][] a = readMatrix(rows, columns); 
+        
+       System.out.println(); 
+       System.out.println("Enter second matrix"); 
+       int[][] b = readMatrix(rows, columns); 
+        
+       int[][] sum = add(a, b); 
+       int[][] difference1 = subtract(a, b); 
+       int[][] difference2 = subtract(b, a); 
+        
+       System.out.println(); 
+       System.out.println("A + B ="); 
+       printMatrix(sum); 
+        
+       System.out.println(); 
+       System.out.println("A - B ="); 
+       printMatrix(difference1); 
+        
+       System.out.println(); 
+       System.out.println("B - A ="); 
+       printMatrix(difference2); 
+   } 
+ 
+   public static int[][] readMatrix(int rows, int columns) { 
+     
+       int[][] result = new int[rows][columns]; 
+       Scanner s = new Scanner(System.in); 
+        
+       for (int i = 0; i < rows; i++) { 
+         
+           for (int j = 0; j < columns; j++) { 
+             
+               result[i][j] = s.nextInt(); 
+                
+           } 
+       } 
+       return result; 
+   } 
+ 
+   public static int[][] add(int[][] a, int[][] b) { 
+     
+       int rows = a.length; 
+       int columns = a[0].length; 
+       int[][] result = new int[rows][columns]; 
+        
+       for (int i = 0; i < rows; i++) { 
+         
+           for (int j = 0; j < columns; j++) { 
+             
+               result[i][j] = a[i][j] + b[i][j]; 
+                
+           } 
+       } 
+       return result; 
+   } 
+ 
+   public static int[][] subtract(int[][] a, int[][] b) { 
+     
+       int rows = a.length; 
+       int columns = a[0].length; 
+       int[][] result = new int[rows][columns]; 
+        
+       for (int i = 0; i < rows; i++) { 
+         
+           for (int j = 0; j < columns; j++) { 
+             
+               result[i][j] = a[i][j] - b[i][j]; 
+                
+           } 
+       } 
+       return result; 
+   } 
+ 
+   public static void printMatrix(int[][] matrix) { 
+     
+       int rows = matrix.length; 
+       int columns = matrix[0].length; 
+        
+       for (int i = 0; i < rows; i++) { 
+         
+           for (int j = 0; j < columns; j++) { 
+             
+               System.out.print(matrix[i][j] + "  "); 
+                
+           } 
+           System.out.println(); 
+       } 
+   } 
+}
+```
+
+## 57. Matrix Subtraction.
+```java
+import java.util.Scanner; 
+  
+ class Matrix_Subtraction { 
+  
+ Scanner scan; 
+ int matrix1[][], matrix2[][], sub[][]; 
+ int row, column; 
+  
+ void create() { 
+   
+  scan = new Scanner(System.in); 
+   
+  System.out.println("Matrix Subtraction"); 
+   
+  // First Matrix Creation.. 
+  System.out.println("\nEnter number of rows & columns"); 
+  row = Integer.parseInt(scan.nextLine()); 
+  column = Integer.parseInt(scan.nextLine()); 
+   
+  matrix1 = new int[row][column]; 
+  matrix2 = new int[row][column]; 
+  sub = new int[row][column]; 
+  
+  System.out.println("Enter the data for first matrix :"); 
+  
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    matrix1[i][j] = scan.nextInt(); 
+   } 
+  } 
+   
+  // Second Matrix Creation.. 
+  System.out.println("Enter the data for second matrix :"); 
+  
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    matrix2[i][j] = scan.nextInt(); 
+   } 
+  } 
+ } 
+  
+ void display() { 
+   
+  System.out.println("\nThe First Matrix is :"); 
+   
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    System.out.print("\t" + matrix1[i][j]); 
+   } 
+   System.out.println(); 
+  } 
+   
+  System.out.println("\n\nThe Second Matrix is :"); 
+   
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    System.out.print("\t" + matrix2[i][j]); 
+   } 
+   System.out.println(); 
+  } 
+ } 
+  
+ void sub() { 
+   
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    sub[i][j] = matrix1[i][j] - matrix2[i][j]; 
+   } 
+  } 
+   
+  System.out.println("\n\nThe Subtraction is :"); 
+   
+  for(int i=0; i &lt row; i++) { 
+    
+   for(int j=0; j &lt column; j++) { 
+     
+    System.out.print("\t" + sub[i][j]); 
+   } 
+   System.out.println(); 
+  } 
+ } 
+} 
+  
+class MatrixSubtractionExample { 
+  
+ public static void main(String args[]) { 
+   
+  Matrix_Subtraction obj = new Matrix_Subtraction(); 
+   
+  obj.create(); 
+  obj.display(); 
+  obj.sub(); 
+ } 
+}
+```
+## 58. Merge two array. 
+```java
+class MergeArrayDemo
+{
+ public static void main(String args[])
+ {
+  Integer a[]={1,2,3,4};
+  Integer b[]={5,6,7,0};
+  Integer[] both = concat(a, b);
+  
+  System.out.print("\nFirst  Array : ");
+  for(int i=0;i<a.length;i++)
+  {
+   System.out.print(a[i]+"\t");
+  }
+
+  System.out.print("\nSecond Array : ");
+  for(int i=0;i<b.length;i++)
+  {
+   System.out.print(b[i]+"\t");
+  }
+
+  System.out.print("\nMerged Array : ");
+  for(int i=0;i<both.length;i++)
+  {
+   System.out.print(both[i]+"\t");
+  }
+ }
+
+ public static Integer[] concat(Integer[] a, Integer[] b)
+ {
+  int aLen = a.length;
+  int bLen = b.length;
+  Integer[] c= new Integer[aLen+bLen];
+  System.arraycopy(a, 0, c, 0, aLen);
+  System.arraycopy(b, 0, c, aLen, bLen);
+  return c;
+ }
+}
+```
+## 59. Middle value of an array.
+
+```java
+import java.util.*;
+
+class MiddleValue
+{
+    public static void main(String args[])
+    {
+        int[] a;
+        int i, j, n, sum = 0, swap, size;
+
+        double t;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter size of array");
+        size = sc.nextInt();
+
+        a = new int[size];
+
+        System.out.println("Enter numbers ");
+        for (i = 0; i < size; i++)
+        {
+            a[i] = sc.nextInt();
+        }
+
+        System.out.println("Numbers are : ");
+        for (i = 0; i < size; i++)
+        {
+            System.out.print(a[i] + " ");
+        }
+
+        //Sorting
+        for (i = 0; i < (size - 1); i++)
+        {
+            for (j = 0; j < (size - i - 1); j++)
+            {
+                if (a[j] > a[j + 1])
+                {
+                    swap = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = swap;
+                }
+            }
+        }
+
+        System.out.println("\nNumbers in sorted order : ");
+        for (i = 0; i < size; i++)
+        {
+            System.out.print(a[i] + " ");
+        }
+
+        //Finding the Middle Value
+        if (size % 2 == 0)
+        {
+            n = (size + 1) / 2;
+            t = (a[n] + a[n - 1]) / 2.0;
+            System.out.println("\nMiddle Value is : " + t);
+        }
+
+        else
+        {
+            System.out.println("\nMiddle Value is : " + a[size / 2]);
+        }
+
+    }
+}
+```
+
+
+## 60. Mirror Matrix.
+```java
+import java.util.*;
+
+class MirrorMatrix
+{
+    public static void main(String[] args)
+    {
+        int row, column;
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter number of rows for matrix :");
+        row = in.nextInt();
+        System.out.print("Enter number of rows for matrix :");
+        column = in.nextInt();
+
+        int matrix[][] = new int[row][column];
+
+        System.out.println("Enter matrix : ");
+
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < column; j++)
+            {
+                matrix[i][j] = in.nextInt();
+            }
+        }
+
+        System.out.println("Mirror matrix : ");
+
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = column - 1; j >= 0; j--)
+            {
+                System.out.print(matrix[i][j] + "\t");
+            }
+
+            System.out.println("");
+        }
+    }
+}
+```
+## 61. Missing number in an array.
+
+```java
+class MissingNumberArray
+{
+    public static int count = 0;
+    public static int position = 0;
+    public static boolean flag = false;
+
+    public static void main(String[] args)
+    {
+        int a[] = {0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 18, 20, 21, 23};
+
+        findMissingNumbers(a, position);
+    }
+
+    private static void findMissingNumbers(int a[], int position)
+    {
+        if (position == a.length - 1)
+            return;
+
+        for (; position < a[a.length - 1]; position++)
+        {
+            if ((a[position] - count) != position)
+            {
+                System.out.println("Missing Number: " + (position + count));
+                flag = true;
+                count++;
+                break;
+            }
+        }
+
+        if (flag)
+        {
+            flag = false;
+            findMissingNumbers(a, position);
+        }
+    }
+}
+```
+
+
+
+
+## 62. Multidimensional Array Java.
+
+```java
+class MultiDimArrayExample
+{
+    public static void main(String[] args)
+    {
+        String[][] names = {{"Mr. ", "Mrs. ", "Ms. "}, {"Smith", "Jones"}};
+        // Mr. Smith
+        System.out.println(names[0][0] + names[1][0]);
+        // Ms. Jones
+        System.out.println(names[0][2] + names[1][1]);
+    }
+}
+```
