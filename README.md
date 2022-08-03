@@ -2,6 +2,12 @@
 
 Java Programming Interview Questions are always the deciding factor in any Java interview. Whether you are a beginner in Java or an expert programmer, you will be tested for your coding skills in the interview. So, it’s a good idea to brush up your coding skills before you face the interview.
 
+The user also search -
+
+### What are the Java programs asked in interviews?
+### What are the most common Java interview questions?
+### Which is the best site for Java interview questions?
+### What is Java programming questions?
 
 ## 1. Program to Print Hello World in Java.
 
